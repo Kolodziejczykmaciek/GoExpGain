@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - docker build --tag typefunc .
+  tag:
+    cmds:
+      - docker image tag typefunc:latest typefunc:v0.1
+  list:
+    cmds:
+      - docker image ls
+  run:
+    cmds:
+      - docker run --rm -it typefunc:v0.1 
+  lrunning:
+    cmds:
+      - docker ps -a 
